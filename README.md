@@ -6,9 +6,8 @@ A plugin for my [Board Game website](https://github.com/customjack/board_game) t
 
 Load the plugin directly via CDN in the board game websites plugin manager:
 
-```html
-<script src="https://cdn.jsdelivr.net/gh/customjack/drinking-board-game-trouble-plugin@v1.0.0/dist/plugins/trouble-plugin.js"></script>
-```
+[CDN Link (v1.0.0)](https://cdn.jsdelivr.net/gh/customjack/drinking-board-game-trouble-plugin@v1.0.0/dist/plugins/trouble-plugin.js)
+
 
 This automatically registers the Trouble plugin and its associated “Trouble Classic” map when the script loads.
 
