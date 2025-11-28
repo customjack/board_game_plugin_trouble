@@ -1,0 +1,24 @@
+{
+  "name": "trouble-plugin",
+  "version": "1.0.0",
+  "description": "Trouble/Pop-O-Matic game plugin for Drinking Board Game",
+  "main": "dist/plugins/trouble-plugin.js",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "watch": "rollup -c rollup.config.js -w"
+  },
+  "keywords": [
+    "board-game",
+    "trouble",
+    "plugin"
+  ],
+  "author": "Jack Carlton",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "rollup": "^4.53.3"
+  }
+}
+

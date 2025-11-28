@@ -6,7 +6,7 @@ dist/*
 !dist/plugins/
 dist/plugins/*
 !dist/plugins/*.js
-*.js.map
+!dist/plugins/*.js.map
 
 # IDE
 .vscode/

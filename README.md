@@ -26,14 +26,31 @@ The built plugin file is included in `dist/plugins/trouble-plugin.js` and can be
 
 ## Building
 
-To build the plugin:
+This plugin has its own build system and is independent of the main project.
+
+### Prerequisites
 
 ```bash
-# In the main repository
-npm run build:trouble
+npm install
 ```
 
-This will build the plugin and copy it to `dist/plugins/trouble-plugin.js` in this repository.
+### Build
+
+```bash
+npm run build
+```
+
+This will build the plugin to `dist/plugins/trouble-plugin.js`.
+
+### Watch Mode
+
+For development:
+
+```bash
+npm run watch
+```
+
+This will rebuild automatically when files change.
 
 ## Map
 
