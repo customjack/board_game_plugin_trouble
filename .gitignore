@@ -1,8 +1,11 @@
 # Dependencies
 node_modules/
 
-# Build outputs
-dist/
+# Build outputs (but allow dist/plugins/ for CDN)
+dist/*
+!dist/plugins/
+dist/plugins/*
+!dist/plugins/*.js
 *.js.map
 
 # IDE
