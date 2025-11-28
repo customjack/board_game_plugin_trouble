@@ -8,7 +8,7 @@
 
 export const troubleClassicMap = {
     "$schema": "https://boardgame.example.com/schemas/game-v3.json",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "type": "game",
     "metadata": {
         "id": "trouble-classic",
@@ -36,9 +36,9 @@ export const troubleClassicMap = {
                 "id": "trouble-plugin",
                 "version": "^1.0.0",
                 "source": "remote",
-                "cdn": "http://localhost:8080/plugins/trouble-plugin.js",
+                "cdn": "https://cdn.jsdelivr.net/gh/customjack/board_game_plugin_trouble@v1.0.2/dist/plugins/trouble-plugin.js",
                 "name": "Trouble Plugin",
-                "description": "Trouble game engine with Pop-O-Matic mechanics"
+                "description": "Trouble game engine mechanics"
             }
         ],
         "minPlayers": 2,

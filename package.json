@@ -1,7 +1,7 @@
 {
   "name": "trouble-plugin",
-  "version": "1.0.0",
-  "description": "Trouble/Pop-O-Matic game plugin for Drinking Board Game",
+  "version": "1.0.2",
+  "description": "Trouble game plugin for Board Game",
   "main": "dist/plugins/trouble-plugin.js",
   "type": "module",
   "scripts": {

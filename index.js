@@ -95,7 +95,7 @@ export default function createTroublePlugin(bundle) {
             return {
                 id: 'trouble-plugin',
                 name: 'Trouble Game Engine',
-                version: '1.0.0',
+                version: '1.0.2',
                 description: 'Adds support for the classic Trouble ruleset.',
                 author: 'Jack Carlton',
                 tags: ['trouble', 'engine'],
