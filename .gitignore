@@ -1,5 +1,6 @@
 # Dependencies
 node_modules/
+package-lock.json
 
 # Build outputs (but allow dist/plugins/ for CDN)
 dist/*
