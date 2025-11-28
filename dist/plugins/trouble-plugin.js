@@ -810,7 +810,7 @@ const troubleClassicMap = {
         "id": "trouble-classic",
         "name": "Trouble Classic",
         "author": "Jack Carlton",
-        "description": "Four-player Pop-O-Matic race to your finish lane.",
+        "description": "Four-player race to your finish lane.",
         "created": "2025-11-22T00:00:00.000Z",
         "modified": "2025-11-22T08:00:37Z",
         "tags": [
@@ -1002,7 +1002,7 @@ const troubleClassicMap = {
 /**
  * Trouble Plugin - Entry point for CDN loading
  * 
- * This plugin registers the Trouble game engine for Pop-O-Matic gameplay.
+ * This plugin registers the Trouble game engine.
  * Based on the working version from commit f73ff38.
  */
 
@@ -1020,7 +1020,7 @@ function createTroublePlugin(bundle) {
     const TroubleGameEngine = createTroubleGameEngine(bundle);
 
     /**
-     * TroublePlugin - Registers the Trouble (Pop-O-Matic) engine
+     * TroublePlugin - Registers the Trouble engine
      */
     class TroublePlugin extends Plugin {
         initialize(eventBus, registryManager, factoryManager) {
@@ -1064,7 +1064,7 @@ function createTroublePlugin(bundle) {
                         id: 'trouble-classic',
                         name: 'Trouble Classic',
                         author: 'Jack Carlton',
-                        description: 'Four-player Pop-O-Matic race to your finish lane.'
+                        description: 'Four-player race to your finish lane.'
                     });
 
                     // Store the map provider for cleanup
@@ -1093,9 +1093,9 @@ function createTroublePlugin(bundle) {
                 id: 'trouble-plugin',
                 name: 'Trouble Game Engine',
                 version: '1.0.0',
-                description: 'Adds support for the classic Trouble/Pop-O-Matic ruleset.',
+                description: 'Adds support for the classic Trouble ruleset.',
                 author: 'Jack Carlton',
-                tags: ['trouble', 'pop-o-matic', 'engine'],
+                tags: ['trouble', 'engine'],
                 isDefault: false,
                 dependencies: [],
                 provides: {

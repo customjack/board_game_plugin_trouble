@@ -14,7 +14,7 @@ export const troubleClassicMap = {
         "id": "trouble-classic",
         "name": "Trouble Classic",
         "author": "Jack Carlton",
-        "description": "Four-player Pop-O-Matic race to your finish lane.",
+        "description": "Four-player race to your finish lane.",
         "created": "2025-11-22T00:00:00.000Z",
         "modified": "2025-11-22T08:00:37Z",
         "tags": [
