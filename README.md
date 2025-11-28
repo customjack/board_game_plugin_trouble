@@ -1,34 +1,22 @@
 # Trouble Plugin
 
-A plugin for the Drinking Board Game that adds support for the classic Trouble/Pop-O-Matic gameplay.
+A plugin for my [Board Game website](https://github.com/customjack/board_game) that provides full Trouble gameplay integration.
 
-## Features
+## Usage
 
-- Pop-O-Matic dice rolling mechanics
-- Multi-piece gameplay (4 pieces per player)
-- Capture mechanics
-- Finish lane racing
+Load the plugin directly via CDN in the board game websites plugin manager:
 
-## Author
+```html
+<script src="https://cdn.jsdelivr.net/gh/customjack/drinking-board-game-trouble-plugin@v1.0.0/dist/plugins/trouble-plugin.js"></script>
+```
 
-Jack Carlton
+This automatically registers the Trouble plugin and its associated “Trouble Classic” map when the script loads.
 
-## Installation
+## Build Instructions
 
-This plugin can be loaded from a CDN or installed locally. See the main Drinking Board Game documentation for plugin installation instructions.
+The plugin is built independently from the main project.
 
-## CDN Usage
-
-The built plugin file is included in `dist/plugins/trouble-plugin.js` and can be served directly from GitHub:
-
-- **GitHub Raw**: `https://raw.githubusercontent.com/YOUR_USERNAME/drinking-board-game-trouble-plugin/master/dist/plugins/trouble-plugin.js`
-- **GitHub Pages** (if enabled): `https://YOUR_USERNAME.github.io/drinking-board-game-trouble-plugin/dist/plugins/trouble-plugin.js`
-
-## Building
-
-This plugin has its own build system and is independent of the main project.
-
-### Prerequisites
+### Install dependencies
 
 ```bash
 npm install
@@ -40,23 +28,18 @@ npm install
 npm run build
 ```
 
-This will build the plugin to `dist/plugins/trouble-plugin.js`.
+This produces `dist/plugins/trouble-plugin.js`.
 
-### Watch Mode
-
-For development:
+### Watch mode (development)
 
 ```bash
 npm run watch
 ```
 
-This will rebuild automatically when files change.
+This rebuilds on file changes.
 
 ## Map
 
-The plugin includes the "Trouble Classic" map, which is automatically registered when the plugin is loaded.
+The Trouble plugin includes the **Trouble Classic** map, which is registered automatically when the plugin is loaded.
 
-## License
-
-See the main Drinking Board Game repository for license information.
-
+---
