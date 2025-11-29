@@ -101,6 +101,32 @@ export function createTroubleGameEngine(bundle) {
             return 'trouble';
         }
 
+        hideTimerUI() {
+            // Always hide/remove timer UI regardless of settings
+            const timerContainer = document.querySelector('.timer-container');
+            if (timerContainer) {
+                timerContainer.style.display = 'none';
+            }
+
+            // Stop/hide component if present
+            const timer = this.uiSystem?.getComponent?.('timer');
+            if (timer) {
+                timer.stopTimer?.();
+                timer.hide?.();
+            }
+
+            // Unregister or hide sidebar widget if manager exists
+            const sidebarManager = this.uiSystem?.sidebarWidgetManager;
+            if (sidebarManager) {
+                sidebarManager.unregister?.('timer');
+            }
+
+            // Also try component manager hide (legacy)
+            if (this.uiSystem?.componentManager) {
+                this.uiSystem.componentManager.hide?.('timer');
+            }
+        }
+
         /**
          * Get required UI components for this engine
          * Override to exclude timer (Trouble doesn't use turn timers)
@@ -119,25 +145,7 @@ export function createTroubleGameEngine(bundle) {
          */
         init() {
             super.init();
-            
-            // Hide timer component - Trouble doesn't use turn timers
-            // The timer HTML is hardcoded in index.html, so we need to hide it directly
-            const timerContainer = document.querySelector('.timer-container');
-            if (timerContainer) {
-                timerContainer.style.display = 'none';
-                console.log('[TroubleGameEngine] Hidden timer container');
-            }
-            
-            // Also try to hide via component system if available
-            if (this.uiSystem?.componentManager) {
-                this.uiSystem.componentManager.hide('timer');
-            } else if (this.uiSystem?.getComponent) {
-                // Fallback: hide directly if componentManager not available
-                const timer = this.uiSystem.getComponent('timer');
-                if (timer && typeof timer.hide === 'function') {
-                    timer.hide();
-                }
-            }
+            this.hideTimerUI();
             
             this.setupPlayerPieces();
             this.registerEventListeners();
@@ -615,10 +623,12 @@ export function createTroubleGameEngine(bundle) {
          */
         startTurnTimer() {
             // Trouble doesn't use timers - do nothing
+            this.hideTimerUI();
         }
 
         stopTurnTimer() {
             // Trouble doesn't use timers - do nothing
+            this.hideTimerUI();
         }
 
         findMoveByTarget(spaceId) {
