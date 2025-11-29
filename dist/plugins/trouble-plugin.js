@@ -101,6 +101,32 @@ function createTroubleGameEngine(bundle) {
             return 'trouble';
         }
 
+        hideTimerUI() {
+            // Always hide/remove timer UI regardless of settings
+            const timerContainer = document.querySelector('.timer-container');
+            if (timerContainer) {
+                timerContainer.style.display = 'none';
+            }
+
+            // Stop/hide component if present
+            const timer = this.uiSystem?.getComponent?.('timer');
+            if (timer) {
+                timer.stopTimer?.();
+                timer.hide?.();
+            }
+
+            // Unregister or hide sidebar widget if manager exists
+            const sidebarManager = this.uiSystem?.sidebarWidgetManager;
+            if (sidebarManager) {
+                sidebarManager.unregister?.('timer');
+            }
+
+            // Also try component manager hide (legacy)
+            if (this.uiSystem?.componentManager) {
+                this.uiSystem.componentManager.hide?.('timer');
+            }
+        }
+
         /**
          * Get required UI components for this engine
          * Override to exclude timer (Trouble doesn't use turn timers)
@@ -119,25 +145,7 @@ function createTroubleGameEngine(bundle) {
          */
         init() {
             super.init();
-            
-            // Hide timer component - Trouble doesn't use turn timers
-            // The timer HTML is hardcoded in index.html, so we need to hide it directly
-            const timerContainer = document.querySelector('.timer-container');
-            if (timerContainer) {
-                timerContainer.style.display = 'none';
-                console.log('[TroubleGameEngine] Hidden timer container');
-            }
-            
-            // Also try to hide via component system if available
-            if (this.uiSystem?.componentManager) {
-                this.uiSystem.componentManager.hide('timer');
-            } else if (this.uiSystem?.getComponent) {
-                // Fallback: hide directly if componentManager not available
-                const timer = this.uiSystem.getComponent('timer');
-                if (timer && typeof timer.hide === 'function') {
-                    timer.hide();
-                }
-            }
+            this.hideTimerUI();
             
             this.setupPlayerPieces();
             this.registerEventListeners();
@@ -615,10 +623,12 @@ function createTroubleGameEngine(bundle) {
          */
         startTurnTimer() {
             // Trouble doesn't use timers - do nothing
+            this.hideTimerUI();
         }
 
         stopTurnTimer() {
             // Trouble doesn't use timers - do nothing
+            this.hideTimerUI();
         }
 
         findMoveByTarget(spaceId) {
@@ -794,6 +804,17 @@ function createTroubleGameEngine(bundle) {
     return TroubleGameEngine;
 }
 
+var version = "1.0.4";
+var pkg = {
+	version: version};
+
+const TROUBLE_PLUGIN_VERSION = pkg.version;
+
+const TROUBLE_PLUGIN_CDN = (version = TROUBLE_PLUGIN_VERSION) =>
+    `https://cdn.jsdelivr.net/gh/customjack/board_game_plugin_trouble@v${version}/dist/plugins/trouble-plugin.js`;
+
+const TROUBLE_PLUGIN_REQUIREMENT = (version = TROUBLE_PLUGIN_VERSION) => `^${version}`;
+
 /**
  * Trouble Classic Map - Bundled with Trouble Plugin
  * 
@@ -804,7 +825,7 @@ function createTroubleGameEngine(bundle) {
 
 const troubleClassicMap = {
     "$schema": "https://boardgame.example.com/schemas/game-v3.json",
-    "version": "1.0.2",
+    "version": TROUBLE_PLUGIN_VERSION,
     "type": "game",
     "metadata": {
         "id": "trouble-classic",
@@ -830,9 +851,9 @@ const troubleClassicMap = {
             },
             {
                 "id": "trouble-plugin",
-                "version": "^1.0.0",
+                "version": TROUBLE_PLUGIN_REQUIREMENT(),
                 "source": "remote",
-                "cdn": "https://cdn.jsdelivr.net/gh/customjack/board_game_plugin_trouble@v1.0.2/dist/plugins/trouble-plugin.js",
+                "cdn": TROUBLE_PLUGIN_CDN(),
                 "name": "Trouble Plugin",
                 "description": "Trouble game engine mechanics"
             }
@@ -1092,7 +1113,7 @@ function createTroublePlugin(bundle) {
             return {
                 id: 'trouble-plugin',
                 name: 'Trouble Game Engine',
-                version: '1.0.2',
+                version: TROUBLE_PLUGIN_VERSION,
                 description: 'Adds support for the classic Trouble ruleset.',
                 author: 'Jack Carlton',
                 tags: ['trouble', 'engine'],

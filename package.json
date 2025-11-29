@@ -1,6 +1,6 @@
 {
   "name": "trouble-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Trouble game plugin for Board Game",
   "main": "dist/plugins/trouble-plugin.js",
   "type": "module",
@@ -17,6 +17,7 @@
   "license": "CC-BY-NC-4.0",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "rollup": "^4.53.3"
   }

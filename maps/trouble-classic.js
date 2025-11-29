@@ -5,10 +5,11 @@
  * to fetch it from external URLs. The map data is exported as a JavaScript
  * object that can be directly imported and registered by the plugin.
  */
+import { TROUBLE_PLUGIN_VERSION, TROUBLE_PLUGIN_CDN, TROUBLE_PLUGIN_REQUIREMENT } from '../version.js';
 
 export const troubleClassicMap = {
     "$schema": "https://boardgame.example.com/schemas/game-v3.json",
-    "version": "1.0.2",
+    "version": TROUBLE_PLUGIN_VERSION,
     "type": "game",
     "metadata": {
         "id": "trouble-classic",
@@ -34,9 +35,9 @@ export const troubleClassicMap = {
             },
             {
                 "id": "trouble-plugin",
-                "version": "^1.0.0",
+                "version": TROUBLE_PLUGIN_REQUIREMENT(),
                 "source": "remote",
-                "cdn": "https://cdn.jsdelivr.net/gh/customjack/board_game_plugin_trouble@v1.0.2/dist/plugins/trouble-plugin.js",
+                "cdn": TROUBLE_PLUGIN_CDN(),
                 "name": "Trouble Plugin",
                 "description": "Trouble game engine mechanics"
             }
@@ -202,4 +203,3 @@ export const troubleClassicMap = {
         }
     }
 };
-

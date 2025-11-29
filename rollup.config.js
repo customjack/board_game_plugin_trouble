@@ -1,5 +1,6 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import json from '@rollup/plugin-json';
 
 export default {
     input: 'index.js',
@@ -8,7 +9,7 @@ export default {
         format: 'es',
         sourcemap: true
     },
-    plugins: [resolve(), commonjs()],
+    plugins: [json(), resolve(), commonjs()],
     external: (id) => {
         // Don't externalize relative imports (trouble-specific files)
         if (id.startsWith('.') || id.startsWith('/')) {
@@ -18,4 +19,3 @@ export default {
         return false;
     }
 };
-

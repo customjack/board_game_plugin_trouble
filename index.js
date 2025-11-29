@@ -9,6 +9,7 @@
 import { createTroubleGameEngine } from './engine/TroubleGameEngine.js';
 // Import bundled map data
 import { troubleClassicMap } from './maps/trouble-classic.js';
+import { TROUBLE_PLUGIN_VERSION } from './version.js';
 
 /**
  * Factory function that receives dependencies and returns the plugin class
@@ -95,7 +96,7 @@ export default function createTroublePlugin(bundle) {
             return {
                 id: 'trouble-plugin',
                 name: 'Trouble Game Engine',
-                version: '1.0.2',
+                version: TROUBLE_PLUGIN_VERSION,
                 description: 'Adds support for the classic Trouble ruleset.',
                 author: 'Jack Carlton',
                 tags: ['trouble', 'engine'],
