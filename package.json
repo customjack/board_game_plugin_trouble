@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "build": "rollup -c rollup.config.js",
-    "watch": "rollup -c rollup.config.js -w"
+    "watch": "rollup -c rollup.config.js -w",
+    "sync-readme-version": "node ./scripts/update-readme-version.js",
+    "postversion": "npm run sync-readme-version"
   },
   "keywords": [
     "board-game",
