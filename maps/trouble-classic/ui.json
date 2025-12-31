@@ -1,0 +1,60 @@
+{
+  "layout": "multi-piece-board",
+  "components": [
+    {
+      "id": "pieceSelector",
+      "enabled": true,
+      "position": {
+        "left": 20,
+        "bottom": 20
+      },
+      "config": {
+        "maxPieces": 4,
+        "showPieceColors": true,
+        "highlightMovable": true
+      }
+    },
+    {
+      "id": "rollButton",
+      "enabled": true,
+      "position": {
+        "bottom": 20,
+        "centerX": true
+      },
+      "config": {
+        "label": "Pop",
+        "hotkey": "space"
+      }
+    },
+    {
+      "id": "boardInteraction",
+      "enabled": true,
+      "position": {
+        "centerX": true,
+        "centerY": true
+      },
+      "config": {
+        "showMultiplePieces": true,
+        "highlightMovablePieces": true
+      }
+    },
+    {
+      "id": "gameLog",
+      "enabled": true,
+      "position": {
+        "bottom": 80,
+        "right": 20
+      },
+      "config": {
+        "maxEntries": 50
+      }
+    }
+  ],
+  "theme": {
+    "primaryColor": "#e53935",
+    "secondaryColor": "#1e88e5",
+    "backgroundColor": "#0f172a",
+    "textColor": "#e2e8f0",
+    "boardStyle": "bold"
+  }
+}

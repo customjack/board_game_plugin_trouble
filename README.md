@@ -6,10 +6,10 @@ A plugin for my [Board Game website](https://github.com/customjack/board_game) t
 
 Load the plugin directly via CDN in the board game websites plugin manager:
 
-[CDN Link (v1.0.4)](https://cdn.jsdelivr.net/gh/customjack/board_game_plugin_trouble@v1.0.4/dist/plugins/trouble-plugin.js)
+[CDN Link (v1.0.5)](https://cdn.jsdelivr.net/gh/customjack/board_game_plugin_trouble@v1.0.5/dist/plugins/trouble-plugin.js)
 
 ```
-https://cdn.jsdelivr.net/gh/customjack/board_game_plugin_trouble@v1.0.4/dist/plugins/trouble-plugin.js
+https://cdn.jsdelivr.net/gh/customjack/board_game_plugin_trouble@v1.0.5/dist/plugins/trouble-plugin.js
 ```
 
 

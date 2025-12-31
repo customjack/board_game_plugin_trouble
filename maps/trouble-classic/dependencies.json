@@ -1,0 +1,20 @@
+{
+  "plugins": [
+    {
+      "id": "core",
+      "version": "^1.0.0",
+      "source": "builtin",
+      "description": "Core game functionality"
+    },
+    {
+      "id": "trouble-plugin",
+      "version": "^1.0.4",
+      "source": "remote",
+      "cdn": "https://cdn.jsdelivr.net/gh/customjack/board_game_plugin_trouble@v1.0.4/dist/plugins/trouble-plugin.js",
+      "name": "Trouble Plugin",
+      "description": "Trouble game engine mechanics"
+    }
+  ],
+  "minPlayers": 2,
+  "maxPlayers": 4
+}

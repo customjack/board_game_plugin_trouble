@@ -1,0 +1,72 @@
+{
+  "turnOrder": "sequential",
+  "startingPositions": {
+    "mode": "custom",
+    "startZones": {
+      "player1": [
+        "p0-home-0",
+        "p0-home-1",
+        "p0-home-2",
+        "p0-home-3"
+      ],
+      "player2": [
+        "p1-home-0",
+        "p1-home-1",
+        "p1-home-2",
+        "p1-home-3"
+      ],
+      "player3": [
+        "p2-home-0",
+        "p2-home-1",
+        "p2-home-2",
+        "p2-home-3"
+      ],
+      "player4": [
+        "p3-home-0",
+        "p3-home-1",
+        "p3-home-2",
+        "p3-home-3"
+      ]
+    }
+  },
+  "recommendedPlayers": {},
+  "diceRolling": {
+    "enabled": true,
+    "diceCount": 1,
+    "diceSides": 6,
+    "rollAgainOn": [
+      6
+    ]
+  },
+  "winCondition": {
+    "type": "all-pieces-home",
+    "config": {
+      "homeZones": {
+        "player1": [
+          "p0-f0",
+          "p0-f1",
+          "p0-f2",
+          "p0-f3"
+        ],
+        "player2": [
+          "p1-f0",
+          "p1-f1",
+          "p1-f2",
+          "p1-f3"
+        ],
+        "player3": [
+          "p2-f0",
+          "p2-f1",
+          "p2-f2",
+          "p2-f3"
+        ],
+        "player4": [
+          "p3-f0",
+          "p3-f1",
+          "p3-f2",
+          "p3-f3"
+        ]
+      }
+    }
+  }
+}

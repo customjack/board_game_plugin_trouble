@@ -1,0 +1,9 @@
+{
+  "renderConfig": {
+    "backgroundColor": "#0b1321",
+    "gridSize": 40,
+    "showConnections": true,
+    "spaceBorderWidth": 2,
+    "spaceBorderColor": "#000000"
+  }
+}
