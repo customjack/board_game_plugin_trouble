@@ -1,12 +1,11 @@
 {
   "name": "trouble-plugin",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Trouble game plugin for Board Game",
   "main": "dist/plugins/trouble-plugin.js",
   "type": "module",
   "scripts": {
     "build": "rollup -c rollup.config.js",
-    "postbuild": "node ../../scripts/build-plugin-maps.js",
     "watch": "rollup -c rollup.config.js -w",
     "sync-readme-version": "node ./scripts/update-readme-version.js",
     "postversion": "npm run sync-readme-version"

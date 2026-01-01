@@ -2,13 +2,6 @@
 node_modules/
 package-lock.json
 
-# Build outputs (but allow dist/plugins/ for CDN)
-dist/*
-!dist/plugins/
-dist/plugins/*
-!dist/plugins/*.js
-!dist/plugins/*.js.map
-
 # IDE
 .vscode/
 .idea/
@@ -27,4 +20,3 @@ npm-debug.log*
 # Environment
 .env
 .env.local
-

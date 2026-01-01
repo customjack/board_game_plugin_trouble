@@ -9,25 +9,9 @@ import settingsJson from './trouble-classic/settings.json';
 import previewImage from './trouble-classic/preview.png';
 import { TROUBLE_PLUGIN_VERSION, TROUBLE_PLUGIN_CDN, TROUBLE_PLUGIN_REQUIREMENT } from '../version.js';
 
-// Resolve the emitted preview asset so it works from CDN or cached blob URLs
-const resolveAssetUrl = (assetPath) => {
-    if (!assetPath) return assetPath;
-    try {
-        return new URL(assetPath, import.meta.url).href;
-    } catch (err) {
-        if (typeof window !== 'undefined') {
-            const base = `${window.location.origin}/plugins/`;
-            try {
-                return new URL(assetPath, base).href;
-            } catch {
-                return `${base}${assetPath}`;
-            }
-        }
-        return assetPath;
-    }
-};
-
-const resolvedPreviewImage = resolveAssetUrl(previewImage);
+// @rollup/plugin-url emits assets into dist/plugins/assets with prefix trouble-
+// The import is rewritten to an absolute URL using import.meta.url in the bundle.
+const resolvedPreviewImage = new URL(previewImage, import.meta.url).href;
 
 // Rebuild the monolithic map definition from the modular bundle assets
 const pluginRequirement = {
